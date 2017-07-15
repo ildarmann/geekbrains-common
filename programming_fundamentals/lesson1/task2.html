@@ -1,0 +1,39 @@
+<meta charset="utf-8">
+<script>
+    /*  
+            2. Игра в загадки
+                1. Загадать загадку. Если ответ верен – поздравить пользователя. Затем сообщить, что игра окончена.
+                2. Если ответ неверный – написать пользователю, что он не угадал.
+                3. Добавить еще 3 загадки. Подсчитать количество правильных ответов, сообщить пользователю.
+        */
+
+    function Enigma(question, answer) {
+        this.question = question;
+        this.answer = answer + "";
+    }
+
+    var ENIGMAS = [
+        new Enigma("Сколько будет '2 + 2'?", 4),
+        new Enigma("Сколько будет '2 * 2'?", 4),
+        new Enigma("Сколько будет 'пятью пять'?", 25)
+    ]
+
+    var correctAnswersCount = 0;
+    for (var i in ENIGMAS) {
+        var doItAgain = " Попробуйте еще раз.";
+        if (i >= ENIGMAS.length - 1) {
+            doItAgain = "";
+        }
+
+        var answer = prompt(ENIGMAS[i].question);
+        if (answer === ENIGMAS[i].answer) {
+            alert("Поздравляем, Вы угадали!" + doItAgain);
+            correctAnswersCount++;
+        } else {
+            alert("Вы не угадали!" + doItAgain);
+        }
+    }
+
+    alert("Игра окончена, у Вас " + correctAnswersCount + " правильных ответов.");
+
+</script>
