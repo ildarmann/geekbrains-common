@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task2</title>
+</head>
+<body>
+    <script>
+        /*
+            2. Дописать игру “Угадай число” (по желанию)
+                Сделать игру с двумя игроками с бесконечным числом попыток. Сделайте возможность выйти из игры.
+        */
+        var computerNumber = parseInt(Math.random() * 100);
+        var attemptCount = 0;
+        userWin = false;
+        do {
+            attemptCount++;
+            var userNumber = +prompt("Угадайте загаданное число. Попытка №" + attemptCount);
+            var resultString = "";
+            if(userNumber === computerNumber) {
+                userWin = true;
+                break;
+            } else if(userNumber < computerNumber){
+                resultString = "Не угадали, оно больше.";
+            } else if(userNumber > computerNumber){
+                resultString = "Не угадали, оно меньше.";     
+            } else {
+                resultString = "Вы должны ввести число.";    
+            }
+        } while(window.confirm(resultString + " Хотите продолжить?"));
+        
+        if(userWin){
+            alert("Ура, Вы угадали c " + attemptCount + " попытки!");
+        } else {
+            alert("К сожалению Вы не смогли угадать загаданное число. Было загадано число: " + computerNumber + ", кол-во попыток: " + attemptCount + ".");
+        }
+    </script>
+</body>
+</html>
