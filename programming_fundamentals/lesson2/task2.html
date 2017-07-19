@@ -10,11 +10,27 @@
             2. Дописать игру “Угадай число” (по желанию)
                 Сделать игру с двумя игроками с бесконечным числом попыток. Сделайте возможность выйти из игры.
         */
-        var computerNumber = parseInt(Math.random() * 100);
+        function Player(name, enigmaNumber){
+            this.name = name;
+            this.enigmaNumber = enigmaNumber;
+        }
+        var players = [];
+        for(var i = 0; i < 2; i++){
+            var name = prompt("Игрок " + (i+1) + " введите свое имя:");
+            var computerNumber = parseInt(Math.random() * 100);
+            players[i] = new Player(name, computerNumber);
+        }
+        
         var attemptCount = 0;
         userWin = false;
         do {
             attemptCount++;
+            for(i in players){
+                players[i].tryGuess
+                
+            }
+            
+            
             var userNumber = +prompt("Угадайте загаданное число. Попытка №" + attemptCount);
             var resultString = "";
             if(userNumber === computerNumber) {
