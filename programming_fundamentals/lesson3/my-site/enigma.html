@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>Личный сайт студента GeekBrains</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css"> 
     <script>
         var correctAnswersCount;
         function askQuestion(textBoxId, answer) {
@@ -13,10 +13,10 @@
             }
         }
 
-        function playPuzzle() {
+        function playEnigmas() {
             correctAnswersCount = 0;
-            askQuestion("userAnswer1", "елка");
-            askQuestion("userAnswer2", "капуста");
+            askQuestion("userAnswer1", "2");
+            askQuestion("userAnswer2", "2");
             alert("Количество правильных ответов: " + correctAnswersCount);
         }
     </script>
@@ -24,25 +24,26 @@
 <body>
     <div id="content">
         <div id="header">
-            <a href="#">Главная</a> <span>/</span>
-            <a href="puzzle.html">Загадки</a> <span>/</span>
-            <a href="#">Угадайка</a> <span>/</span>
-            <a href="guess-2.html">Угадайка мультиплеер</a>
+            <a href="./index.html">Главная</a> <span>/</span>
+            <a href="./enigma.html">Загадки</a> <span>/</span>
+            <a href="./guess.html">Угадайка</a> <span>/</span>
+            <a href="./guess_mult.html">Угадайка мультиплеер</a>
         </div>
         <h1>Личный сайт студента GeekBrains</h1>
         <div id="center"> 
-            <h1>Игра в загадки</h1>
+            <h1>Игра "Загадки"</h1>
             <div id="box">
-                <p>Зимой и летом одним цветом.</p>
+                <p>Сколько будет '2 + 2'?</p>
                 <input type="text" id="userAnswer1">
-                <p>Сто одежек и все без застежек.</p>
+                <p>Сколько будет '2 * 2'?</p>
                 <input type="text" id="userAnswer2">
                 <br/><br/>
-                <a href="#" onclick="playPuzzle();">Ответить</a>
+                <a href="#" onclick="playEnigmas();">Ответить</a>
                 <div class="clear"></div>
             </div>
         </div>
     </div>
     <div id="footer">Copyright © 2016 <a href="https://geekbrains.ru/" target="_blank">GeekBrains</a></div>
 </body>
+
 </html>
